@@ -64,12 +64,12 @@ async function run() {
             res.json(orderAll);
         });
         // // DELETE single order API
-        // app.delete('/order/:id', async (req, res) => {
-        //     const id = req.params.id;
-        //     const query = { _id: ObjectId(id) };
-        //     const result = await orderCollection.deleteOne(query);
-        //     res.json(result);
-        // });
+        app.delete('/order/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) };
+            const result = await orderCollection.deleteOne(query);
+            res.json(result);
+        });
 
         // Get Post API for Google Sing In
         app.post('/users', async (req, res) => {
